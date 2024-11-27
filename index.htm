@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bookmark</title>
+    <link rel="icon" href="images/book_1161203.png" />
+    <!------header font------->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!---------fontawsem------>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!---bootStrap css--->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!---stylesheet-->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="container">
+        <div class="head d-flex align-items-center justify-content-center">
+          <h1 class="header my-5">Bookmarker</h1>
+        </div>
+        <div class="books-body py-5">
+          <div
+            class="body-head d-flex align-items-center justify-content-center mb-5"
+          >
+            <h3 class="body-header">
+              <i class="fa-solid fa-bookmark"></i>
+              Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark text-success"></i>
+            </h3>
+          </div>
+
+          <div class="site-name w-100 d-flex flex-column my-3">
+            <label for="siteName" class="form-label">
+              <i class="fa-solid fa-book pe-2"></i>Site Name
+            </label>
+            <input
+              type="text"
+              placeholder="Bookmark Name"
+              class="form-control w-100"
+              id="siteName"
+              aria-describedby="emailHelp"
+              oninput="NameValidate()"
+            />
+            <div class="text-danger d-none py-2" id="nameError">
+              Site name must contain at least 3 characters
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="booksUrl" class="form-label"
+              ><i class="fa-solid fa-link pe-2"></i>Site URL
+            </label>
+            <input
+              type="url"
+              placeholder="website URL"
+              class="form-control"
+              id="booksUrl"
+              oninput="validateUrl()"
+            />
+            <div class="text-danger d-none py-2" id="urlError">
+              Site URL must be a valid one
+            </div>
+          </div>
+
+          <button
+            onclick="submit()"
+            type="submit"
+            class="btn btn-danger mx-auto d-block mt-5 px-5"
+          >
+            Submit
+          </button>
+        </div>
+        <table class="mt-3 bg-light table text-center">
+          <thead>
+            <tr>
+              <th class="text-capitalize">index</th>
+              <th class="text-capitalize">books Name</th>
+              <th class="text-capitalize">visit</th>
+              <th class="text-capitalize">delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <!--------bootStrap-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-----main js file---->
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
